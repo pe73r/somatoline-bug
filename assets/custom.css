@@ -144,7 +144,7 @@ html {
 
 .header__linklist-highlight{
   /* color: #0052BF; */
-  font-weight: 700;
+  /*font-weight: 700;*/
 }
 
 @media screen and (max-width: 740px) {

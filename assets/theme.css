@@ -1490,7 +1490,7 @@ p + .button-group,
 }
 
 [reveal] {
-  opacity: 0;
+  opacity: 1;
 }
 
 [reveal-visibility] {

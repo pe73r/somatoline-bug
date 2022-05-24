@@ -26,7 +26,7 @@
     "text_font": "helvetica_n4",
     "text_font_size": 14,
     "currency_code_enabled": false,
-    "stagger_products_apparition": false,
+    "stagger_products_apparition": true,
     "round_color_swatches": false,
     "show_vendor": false,
     "show_secondary_image": true,
@@ -358,7 +358,7 @@
       "checkout-banner": {
         "type": "checkout-banner",
         "settings": {
-          "logo_svg": "shopify:\/\/shop_images\/somatoline-logo.jpg",
+          "logo_svg": "shopify:\/\/shop_images\/logo-new_fb760463-3dc3-4310-89f6-0853c48dabd7.png",
           "image": "shopify:\/\/shop_images\/Rectangle_499.jpg",
           "image_mobile": "shopify:\/\/shop_images\/Rectangle_499.png"
         }
