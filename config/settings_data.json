@@ -280,6 +280,34 @@
       },
       "mini-cart": {
         "type": "mini-cart",
+        "blocks": {
+          "675bbd99-e3df-424b-8b98-786de2278a83": {
+            "type": "free_shipping",
+            "settings": {
+              "limit": 60,
+              "text": "pour avoir la LIVRAISON OFFERTE ! 😃"
+            }
+          },
+          "2b8d2332-69fd-4ce5-91a8-8fbbc8cb591e": {
+            "type": "gift_card",
+            "settings": {
+              "limit": 100,
+              "text": "pour gagner un CODE PROMO DE 10€ ! 😎"
+            }
+          },
+          "15d098e4-6060-4c93-9c5f-9a21dc666730": {
+            "type": "free_product",
+            "settings": {
+              "limit": 150,
+              "text": "pour gagner un GOMMAGE ! 😏"
+            }
+          }
+        },
+        "block_order": [
+          "675bbd99-e3df-424b-8b98-786de2278a83",
+          "2b8d2332-69fd-4ce5-91a8-8fbbc8cb591e",
+          "15d098e4-6060-4c93-9c5f-9a21dc666730"
+        ],
         "settings": {
           "show_order_note": false,
           "show_checkout_button": true,
@@ -358,7 +386,7 @@
       "checkout-banner": {
         "type": "checkout-banner",
         "settings": {
-          "logo_svg": "shopify:\/\/shop_images\/somatoline-logo.jpg",
+          "logo_svg": "shopify:\/\/shop_images\/logo-new_fb760463-3dc3-4310-89f6-0853c48dabd7.png",
           "image": "shopify:\/\/shop_images\/Rectangle_499.jpg",
           "image_mobile": "shopify:\/\/shop_images\/Rectangle_499.png"
         }

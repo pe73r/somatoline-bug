@@ -72,6 +72,13 @@
         <input type="hidden" name="checkout">
 
         {%- for line_item in cart.items -%}
+        {% assign isFreeProduct = false %}
+        {%- for property in line_item.properties -%}
+        {%- if property.first == "isFree"  -%}
+          {% assign isFreeProduct = true %}
+        {%- endif -%}
+        {%- endfor -%}
+
           <line-item class="line-item">
             <div class="line-item__content-wrapper">
               <a href="{{ line_item.url }}" class="line-item__image-wrapper" tabindex="-1" aria-hidden="true">
@@ -160,6 +167,7 @@
                     {%- unless line_item.properties == blank -%}
                       <ul class="product-item-meta__property list--unstyled text--subdued text--xsmall" role="list">
                         {%- for property in line_item.properties -%}
+                        {%- unless property.first == "isFree"  -%}
                           {%- assign first_character_in_key = property.first | truncate: 1, '' -%}
 
                           {%- if property.last == blank or first_character_in_key == '_' -%}
@@ -167,6 +175,7 @@
                           {%- endif -%}
 
                           <li>{{ property.first }}: {{ property.last }}</li>
+                          {%- endunless -%}
                         {%- endfor -%}
                       </ul>
                     {%- endunless -%}
@@ -210,6 +219,7 @@
                   {%- assign allow_more = false -%}
                 {%- endif -%}
 
+                {%- unless isFreeProduct  -%}
                 <line-item-quantity class="line-item__quantity">
                   <div class="quantity-selector quantity-selector--small">
                     <a href="{{ routes.cart_change_url }}?quantity={{ line_item.quantity | minus: 1 }}&line={{ forloop.index }}" class="quantity-selector__button" aria-label="{{ 'cart.general.decrease_quantity' | t | escape }}" data-no-instant>
@@ -231,6 +241,7 @@
 
                   <a href="{{ line_item.url_to_remove }}" class="line-item__remove-button link text--subdued text--xxsmall" data-no-instant>{{ 'cart.general.remove' | t }}</a>
                 </line-item-quantity>
+                {%- endunless -%}
               </div>
 
               <div class="line-item__price-list-container text--small">
@@ -400,20 +411,7 @@
           {%- assign has_found_matching_threshold = true -%}
         {%- endif -%}
 
-        {%- if has_found_matching_threshold -%}
-          {%- assign threshold_in_cents = free_shipping_calculated_threshold | times: 100 -%}
-
-          <free-shipping-bar threshold="{{ threshold_in_cents }}" class="shipping-bar" style="--progress: {{ cart.total_price | times: 1.0 | divided_by: threshold_in_cents | at_most: 1 }}">
-            {%- if cart.total_price >= threshold_in_cents -%}
-              <span class="shipping-bar__text text--small">{{ 'cart.general.free_shipping' | t }}</span>
-            {%- else -%}
-              {%- capture remaining_amount -%}{{ cart.total_price | minus: threshold_in_cents | abs | money }}{%- endcapture -%}
-              <span class="shipping-bar__text text--small">{{ 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount }}</span>
-            {%- endif -%}
-
-            <span class="shipping-bar__progress"></span>
-          </free-shipping-bar>
-        {%- endif -%}
+        {%- render 'cart-progress-bar' -%}
       {%- endif -%}
 
 
@@ -448,7 +446,6 @@
        {%- if section.settings.extra_text != blank -%}
          <p class="mini-cart__extra_text">{{ section.settings.extra_text }}</p>
        {%- endif -%}
-
     </footer>
   {%- endif -%}
 
@@ -602,6 +599,66 @@
       "label": "Text",
       "default": "shipping"
     }
-  ]
+  ],
+  "blocks": [
+        {
+            "type": "free_shipping",
+            "name": "Free shipping",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "number",
+                    "id": "limit",
+                    "default":60,
+                    "label": "Limit"
+                },
+                {
+                    "type": "text",
+                    "id": "text",
+                    "default": "pour profiter de la livraison gratuite",
+                    "label": "Free shipping text"
+                }
+            ]
+        },
+        {
+          "type": "gift_card",
+          "name": "Gift card",
+          "limit": 1,
+          "settings": [
+              {
+                  "type": "number",
+                  "id": "limit",
+                  "default":100,
+                  "label": "Limit"
+              },
+              {
+                  "type": "text",
+                  "id": "text",
+                  "default": "pour profiter du bon d'achat offert",
+                  "label": "Free shipping text"
+              }
+          ]
+      },
+      {
+        "type": "free_product",
+        "name": "Free product",
+        "limit": 1,
+        "settings": [
+            {
+                "type": "number",
+                "id": "limit",
+                "default":150,
+                "label": "Limit"
+            },
+            {
+                "type": "text",
+                "id": "text",
+                "default": "pour profiter du cadeau offert",
+                "label": "Free shipping text"
+            }
+        ]
+    }
+      ]
+
 }
 {% endschema %}

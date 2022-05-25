@@ -44,6 +44,7 @@
     <link rel="preload" as="style" href="{{ 'custom.css' | asset_url }}">
     <link rel="preload" as="script" href="{{ 'vendor.js' | asset_url }}">
     <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
+    <link rel="preload" as="script" href="{{ 'progress-bar.js' | asset_url }}">
 
 
     {%- comment -%}
@@ -76,6 +77,8 @@
     <script src="{{ 'vendor.js' | asset_url }}" defer></script>
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
+    <script src="{{ 'progress-bar.js' | asset_url }}" defer></script>
+
 
     {{ content_for_header }}
   </head>

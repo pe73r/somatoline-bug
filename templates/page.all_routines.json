@@ -40,12 +40,62 @@
             "button_text": "JE DÉCOUVRE",
             "button_url": ""
           }
+        },
+        "5b6ed153-db4e-4032-a42c-d204fac64570": {
+          "type": "card",
+          "settings": {
+            "title": "Card",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <\/p>",
+            "button_text": "JE DÉCOUVRE",
+            "button_url": ""
+          }
+        },
+        "d70e0e25-7937-41ce-821f-42bf50537dcb": {
+          "type": "card",
+          "settings": {
+            "title": "Card",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <\/p>",
+            "button_text": "JE DÉCOUVRE",
+            "button_url": ""
+          }
+        },
+        "98e8faf4-9bd6-437b-add8-fccd29488c54": {
+          "type": "card",
+          "settings": {
+            "title": "Card",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <\/p>",
+            "button_text": "JE DÉCOUVRE",
+            "button_url": ""
+          }
+        },
+        "f7ad656a-3ce7-49c6-8699-126af006261d": {
+          "type": "card",
+          "settings": {
+            "title": "Card",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <\/p>",
+            "button_text": "JE DÉCOUVRE",
+            "button_url": ""
+          }
+        },
+        "3a6cc58c-5bc0-4cc8-9854-fa5ae67ea4ec": {
+          "type": "card",
+          "settings": {
+            "title": "Card",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <\/p>",
+            "button_text": "JE DÉCOUVRE",
+            "button_url": ""
+          }
         }
       },
       "block_order": [
         "165166093331c2131a-0",
         "165166093331c2131a-1",
-        "165166093331c2131a-2"
+        "165166093331c2131a-2",
+        "5b6ed153-db4e-4032-a42c-d204fac64570",
+        "d70e0e25-7937-41ce-821f-42bf50537dcb",
+        "98e8faf4-9bd6-437b-add8-fccd29488c54",
+        "f7ad656a-3ce7-49c6-8699-126af006261d",
+        "3a6cc58c-5bc0-4cc8-9854-fa5ae67ea4ec"
       ],
       "settings": {
         "title": "Toutes les routines",

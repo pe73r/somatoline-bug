@@ -4,6 +4,15 @@
   }
 }
 
+@media screen and (max-width: 999px) {
+  .wrapper-checkout{
+    width: 90%;
+    margin: auto;
+  }
+}
+
+
+
 .checkout-logo {
   width: 100%;
   display: flex;
@@ -95,9 +104,8 @@ carousel-panel {
 
 #shopify-section-checkout-carousel {
   background: #f3f3f3;
-  padding: 20px 40px;
+  padding: 20px 5px;
   display: flex;
-
   justify-content: center;
   flex-direction: column;
 }
@@ -139,15 +147,15 @@ carousel-panel {
   box-sizing: border-box !important;
   position: relative;
   display: block;
-  padding: 20px 10px;
+  padding: 20px 5px;
   overflow: hidden;
 }
 
 carousel-panel h4 {
-  text-align: center;
+  text-align: left;
   line-height: normal;
-  font-size: 14px;
-  color: black;
+  font-size: 11px;
+  color: #5F5E5E;
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 10px;
@@ -177,7 +185,7 @@ carousel-panel > div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 11px;
+  padding: 10px;
 }
 
 @keyframes pulse {
@@ -188,15 +196,15 @@ carousel-panel > div {
 
 checkout-carousel-product-form button {
   cursor: pointer;
-  text-decoration: underline;
   text-transform: uppercase;
   color: #009760;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 500;
   width: 100%;
   display: flex;
-  padding-bottom: 4px !important;
-  padding-left: 7.5px !important;
-  padding-right: 7.5px !important;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #009760;
   justify-content: center;
   white-space: break-spaces;
 

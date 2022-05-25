@@ -83,7 +83,7 @@
         {%- endunless -%}
       {%- endif -%}
 
-      <a href="{{ product.url }}" class="product-item-meta__title {% if product.title.size < 22 %} product-item-meta__title-min-h {% endif %}">{{ product.title }}</a>
+      <a href="{{ product.url }}" class="product-item-meta__title {% if product.title.size <= 25 %}  {% endif %}">{{ product.title }}</a>
 
       <!-- YOTPO REVIEWS -->
         <div class="yotpo bottomLine"
@@ -213,17 +213,7 @@
         <p class="product-item-related__subtitle line-clamp">{{ product.metafields.product.product-item-related__subtitle.value }}</p>
       {%- endif -%}
 
-       <div class="">
-         {%- if product.metafields.product.produits_coffret_big_card != blank and routine_big_block == 1 -%}
-           <p class="product-item-related__count">{{ product.metafields.product.produits_coffret_big_card.value }}</p>
-         {%- endif -%}
 
-         {%- if product.metafields.product.produits_coffret_little_card != blank -%}
-            {%- unless routine_big_block == 1 -%}
-               <p class="product-item-related__count">{{ product.metafields.product.produits_coffret_little_card.value }}</p>
-            {%- endunless -%}
-         {%- endif -%}
-       </div>
     </div>
 
 
@@ -278,6 +268,19 @@
       {%- if show_cta -%}
          {%- if product.available %}
           <div class="product-item__cta-wrapper">
+            <div class="">
+              
+              {%- if product.metafields.product.produits_coffret_big_card != blank and routine_big_block == 1 -%}
+                <p class="product-item-related__count">{{ product.metafields.product.produits_coffret_big_card.value }}</p>
+              {%- endif -%}
+
+              {%- if product.metafields.product.produits_coffret_little_card != blank -%}
+                 {%- unless routine_big_block == 1 -%}
+                    <p class="product-item-related__count">{{ product.metafields.product.produits_coffret_little_card.value }}</p>
+                 {%- endunless -%}
+              {%- endif -%}
+            </div>
+
             {%- if product.variants.size == 1 -%}
               {%- capture form_id -%}product_form_{{ section.id }}_{{ block.id }}_{{ product.id }}_{% increment product_form_index %}{%- endcapture -%}
               {%- form 'product', product, is: 'product-form', id: form_id -%}
@@ -295,6 +298,17 @@
           </div>
         {%- else -%}
           <div class="product-item__cta-wrapper">
+            <div class="">
+              {%- if product.metafields.product.produits_coffret_big_card != blank and routine_big_block == 1 -%}
+                <p class="product-item-related__count">{{ product.metafields.product.produits_coffret_big_card.value }}</p>
+              {%- endif -%}
+
+              {%- if product.metafields.product.produits_coffret_little_card != blank -%}
+                 {%- unless routine_big_block == 1 -%}
+                    <p class="product-item-related__count">{{ product.metafields.product.produits_coffret_little_card.value }}</p>
+                 {%- endunless -%}
+              {%- endif -%}
+            </div>
             <span class="product-item__cta text--subdued button button--full button--subdued">{{ 'collection.product.sold_out' | t }}</span>
           </div>
         {%- endif -%}

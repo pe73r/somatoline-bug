@@ -85,8 +85,8 @@ html {
 
 @media screen and (max-width: 440px) {
   .product-item .button:not(.button--text){
-       padding-left: 0px;
-       padding-right: 0px;
+       padding-left: 5px;
+       padding-right: 5px;
   }
 }
 
@@ -144,7 +144,7 @@ html {
 
 .header__linklist-highlight{
   /* color: #0052BF; */
-  font-weight: 700;
+  /*font-weight: 700;*/
 }
 
 @media screen and (max-width: 740px) {
@@ -794,6 +794,7 @@ html {
 
 .product-item .product-item-meta__title{
   font-size: calc(var(--base-font-size) - 2px);
+  color: #5F5E5E;
 }
 
 .product-item .product_item__content{
@@ -859,6 +860,14 @@ html {
   .routines-carousel .product-item-routine{
       width: 48%;
       margin: 0 10px;
+  }
+
+  .product-item .product-item__label{
+     min-height: 45px;
+  }
+
+  .product-item-card .label {
+    margin-bottom: 25px;
   }
 }
 
@@ -1109,6 +1118,7 @@ html {
 
 .product-item-meta__title-min-h{
   min-height: 35px;
+  width: 80%;
 }
 
 .product-meta__related-title{
@@ -1141,6 +1151,13 @@ html {
   text-align: left;
   font-size: 12px;
   margin: 0;
+}
+
+.product-item-routine .product-item-related__subtitle{
+  min-height: 85px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .product-item-related__count{
@@ -1813,8 +1830,18 @@ html {
     overflow: visible;
     text-overflow: inherit;
     margin-top: 0;
-    text-align: center;
+    text-align: left;
     min-height: 55px;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-left: 3px;
+}
+
+.mini-cart__recommendations .product-item__cta{
+   font-size: 11px;
+   line-height: 3em;
+   padding-left: 8px;
+   padding-right: 8px;
 }
 
 .mini-cart__recommendations .product-item__link{
@@ -1832,6 +1859,10 @@ html {
   .mini-cart-recommendations-carousel .product-item{
     width: 30%;
     margin: 0 5px;
+  }
+
+  .mini-cart__recommendations .product-item__cta{
+     font-size: 9px;
   }
 }
 
@@ -2005,7 +2036,7 @@ html {
 }
 
 .yotpo.bottomLine{
-  /* min-height: 14px; */
+  min-height: 17px;
 }
 
 /* space button mobile */
@@ -2015,6 +2046,13 @@ html {
     flex-direction: column;
     line-height: normal;
   }
+
+  .product-item-related .price-list{
+    flex-wrap: nowrap;
+    flex-direction: row;
+    line-height: normal;
+  }
+
   .product-item .price--compare{
      font-size: 10px;
   }
@@ -2839,9 +2877,7 @@ input:focus ~ .input__label{
 }
 
 /* Ugly code here-- retours 23/05 */
-.product-item-meta__title {
-  color: #5F5E5E;
-}
+
 
 .collection-list__wrapper>*:first-child .product-item-meta__price-list-container .price--highlight{
     margin-right: 8px !important;
@@ -2878,7 +2914,7 @@ input:focus ~ .input__label{
 
 .line-clamp {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -2889,7 +2925,9 @@ input:focus ~ .input__label{
     }
     .product-item__meta{
       display: flex;
-        flex-direction: column;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 90px;
     }
 }
 
@@ -2909,7 +2947,16 @@ input:focus ~ .input__label{
   }
 }
 
-.button:not(.button--text){
+.product-item-card .button:not(.button--text),
+.product-item-routine .button:not(.button--text){
    padding-left: 0px;
    padding-right: 0px;
+}
+
+.product-item-routine .product-item-meta__title{
+  min-height: 40px;
+}
+
+.yotpo-bottomline .yotpo-icon-empty-star{
+  margin-top: 10px;
 }
